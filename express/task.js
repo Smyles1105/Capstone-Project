@@ -55,7 +55,7 @@ function addTask() {
 	
 	task.appendChild(taskHeader);
 	task.appendChild(content);
-	task.appendChild(deleteButton);
+	
 	
 
 	 document.getElementById("tasks").appendChild(task);
@@ -88,7 +88,7 @@ function addTask() {
 				icon: '',
 				tooltip: 'Delete Task',
 				onAction: function () {
-					deleteButton.click();
+					task.remove();
 				}
 			}
 			);
