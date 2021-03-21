@@ -9,10 +9,6 @@ function deleteTask()
 	
 }
 
-	const colourInput = document.createElement("input");
-	colourInput.type = "color";
-	colourInput.addEventListener("oninput", taskBackgroundChange);
-
 
 
 function taskBackgroundChange(t, c)
@@ -28,6 +24,13 @@ function addTask() {
 	const task = document.createElement("div");
 	task.classList.add("task");
 	
+	const colInputBtn = document.createElement("input");
+	colInputBtn.type = "color";
+	colInputBtn.name = "colBtn";
+	colInputBtn.id = "colInputBtn";
+	colInputBtn.classList.add("colInBtn");
+	colInputBtn.defaultValue = "#000000";
+	colInputBtn.addEventListener("change", taskBackgroundChange);
 
 	const taskTitle = document.createElement("h2");
 	taskTitle.appendChild(document.createTextNode(`Task #${++taskID}`));
@@ -41,20 +44,13 @@ function addTask() {
 	taskHeader.classList.add("taskHeader");
 	taskHeader.addEventListener("mousedown", dragStart);
 
-	const deleteButton = document.createElement("button");
-	deleteButton.classList.add("deleteButton");
-
-	const delButIcon = document.createElement("i");
-	delButIcon.classList.add("fas", "fa-trash");
-	deleteButton.appendChild(delButIcon);
-	deleteButton.addEventListener("mousedown", deleteTask);
-
 	const textArea = content.appendChild(document.createElement("textarea"));
 	textArea.textContent = ("Click here to type...");
 
 	
 	task.appendChild(taskHeader);
 	task.appendChild(content);
+	task.appendChild(colInputBtn);
 	
 	
 
@@ -71,18 +67,18 @@ function addTask() {
 		wordcount: 'false',
 		toolbar: 'text | colour | deleteTask',
 		setup: function (editor) {
-			editor.ui.registry.addButton('taskbackcolour',
-			{
-			icon: 'fill',
-			tooltip: 'Change task background colour',
-			onAction: function () {
-
-				colourInput.click();
-				colourInput.addEventListener("oninput", taskBackgroundChange);
-				taskBackgroundChange(task, colourInput);
-			}
-			});
-
+				editor.ui.registry.addButton('taskbackcolour',
+				{
+				icon: 'fill',
+				tooltip: 'Change task background colour',
+				onAction: function () {
+					colInputButton = colInputBtn;
+					colInputButton.addEventListener("change", taskBackgroundChange);
+					taskBackgroundChange(task, colInputButton);
+					colInputButton.click();
+					taskBackgroundChange(task, colInputButton);
+					}
+				});
 			editor.ui.registry.addButton('deleteTask',
 			{
 				icon: '',
