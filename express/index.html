@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://kit.fontawesome.com/4072c68cb0.js" crossorigin="anonymous"></script>
+        
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Separate CSS files keep the code shorter -->
         <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/4072c68cb0.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.tiny.cloud/1/mczk2rboulwee27dkzny30c2fhzliifi5ko4dkwu2qlm65da/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+       
         <title>Task Manager</title>
     </head>
     <body>
@@ -20,4 +21,52 @@
     </body>
     <script src="dragged.js"></script>
     <script src="task.js"></script>
+    <script src="https://cdn.tiny.cloud/1/mczk2rboulwee27dkzny30c2fhzliifi5ko4dkwu2qlm65da/tinymce/5/tinymce.min.js" referrerpolicy="origin">//TinyMCE
+        tinymce.init({
+            selector: '.task textarea',
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            toolbar_mode: 'floating',
+            menubar: 'false',
+            elementpath: 'false',
+            wordcount: 'false',
+            toolbar: 'text | colour | deleteTask',
+            setup: function (editor) {
+                editor.ui.registry.addButton('taskbackcolour',
+                {
+                icon: 'fill',
+                tooltip: 'Change task background colour',
+                onAction: function () {
+    
+                    colourInput.click();
+                    colourInput.addEventListener("oninput", taskBackgroundChange);
+                    taskBackgroundChange(task, colourInput);
+                }
+                });
+    
+                editor.ui.registry.addButton('deleteTask',
+                {
+                    icon: '',
+                    tooltip: 'Delete Task',
+                    onAction: function () {
+                        deleteButton.click();
+                    }
+                }
+                );
+            },
+            toolbar_groups: 
+            {
+                text: 
+                {
+                    icon: 'change-case',
+                    tooltip: 'Text tools',
+                    items: 'bold italic underline strikethrough | superscript subscript | align | text-color highlight-bg-color'
+                },
+                colour:
+                {
+                    icon: 'color-picker',
+                    tooltip: 'Background Colours',
+                    items: 'backcolor | taskbackcolour'
+                }
+            }
+         });</script>
 </html>

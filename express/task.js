@@ -1,10 +1,12 @@
 document.getElementById("add").addEventListener("click", addTask);
 
+
 let taskID = 0;
 
 function deleteTask()
 {
 	this.parentElement.remove();
+	
 }
 
 	const colourInput = document.createElement("input");
@@ -21,6 +23,8 @@ function taskBackgroundChange(t, c)
 
 
 function addTask() {
+
+	
 	const task = document.createElement("div");
 	task.classList.add("task");
 	
@@ -54,7 +58,10 @@ function addTask() {
 	task.appendChild(deleteButton);
 	
 
-	
+	 document.getElementById("tasks").appendChild(task);
+	 
+
+	//TinyMCE
 	tinymce.init({
 		selector: '.task textarea',
 		plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
@@ -62,7 +69,7 @@ function addTask() {
 		menubar: 'false',
 		elementpath: 'false',
 		wordcount: 'false',
-		toolbar: 'text | colour',
+		toolbar: 'text | colour | deleteTask',
 		setup: function (editor) {
 			editor.ui.registry.addButton('taskbackcolour',
 			{
@@ -75,6 +82,16 @@ function addTask() {
 				taskBackgroundChange(task, colourInput);
 			}
 			});
+
+			editor.ui.registry.addButton('deleteTask',
+			{
+				icon: '',
+				tooltip: 'Delete Task',
+				onAction: function () {
+					deleteButton.click();
+				}
+			}
+			);
 		},
 		toolbar_groups: 
 		{
@@ -92,14 +109,8 @@ function addTask() {
 			}
 		}
 	 });
-
-	 document.getElementById("tasks").appendChild(task);
 }
 
-addTask();
-addTask();
-addTask();
-addTask();
 
 
 
