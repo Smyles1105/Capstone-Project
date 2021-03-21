@@ -12,6 +12,7 @@ function deleteTask()
 	colourInput.addEventListener("oninput", taskBackgroundChange);
 
 
+
 function taskBackgroundChange(t, c)
 {
 	t.style.backgroundColor = c.value;
