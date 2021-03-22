@@ -30,7 +30,7 @@ function addTask() {
 	colInputBtn.id = "colInputBtn";
 	colInputBtn.classList.add("colInBtn");
 	colInputBtn.defaultValue = "#000000";
-	colInputBtn.addEventListener("change", taskBackgroundChange);
+	colInputBtn.addEventListener("change", (ev) => taskBackgroundChange(task, colInputBtn));
 
 	const taskTitle = document.createElement("h2");
 	taskTitle.appendChild(document.createTextNode(`Task #${++taskID}`));
@@ -49,8 +49,8 @@ function addTask() {
 
 	
 	task.appendChild(taskHeader);
-	task.appendChild(content);
 	task.appendChild(colInputBtn);
+	task.appendChild(content);
 	
 	
 
@@ -73,10 +73,8 @@ function addTask() {
 				tooltip: 'Change task background colour',
 				onAction: function () {
 					colInputButton = colInputBtn;
-					colInputButton.addEventListener("change", taskBackgroundChange);
-					taskBackgroundChange(task, colInputButton);
 					colInputButton.click();
-					taskBackgroundChange(task, colInputButton);
+					
 					}
 				});
 			editor.ui.registry.addButton('deleteTask',
