@@ -30,7 +30,7 @@ function addTask() {
 	colInputBtn.id = "colInputBtn";
 	colInputBtn.classList.add("colInBtn");
 	colInputBtn.defaultValue = "#000000";
-	colInputBtn.addEventListener("change", (ev) => taskBackgroundChange(task, colInputBtn));
+	colInputBtn.addEventListener("input", (ev) => taskBackgroundChange(task, colInputBtn));
 
 	const taskTitle = document.createElement("h2");
 	taskTitle.appendChild(document.createTextNode(`Task #${++taskID}`));
