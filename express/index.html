@@ -27,6 +27,7 @@
             menubar: 'false',
             elementpath: 'false',
             wordcount: 'false',
+            resize: 'both',
             toolbar: 'text | colour | deleteTask',
             setup: function (editor) {
                 editor.ui.registry.addButton('taskbackcolour',
@@ -57,13 +58,13 @@
                 {
                     icon: 'change-case',
                     tooltip: 'Text tools',
-                    items: 'bold italic underline strikethrough | superscript subscript | align | text-color highlight-bg-color'
+                    items: 'bold italic underline strikethrough | superscript subscript | align'
                 },
                 colour:
                 {
                     icon: 'color-picker',
                     tooltip: 'Background Colours',
-                    items: 'backcolor | taskbackcolour'
+                    items: 'forecolor | backcolor | taskbackcolour'
                 }
             }
          });</script>

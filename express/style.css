@@ -36,7 +36,10 @@ button {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
     resize: both;
-    overflow: auto;
+    overflow: visible;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 
 }
 .colInBtn {
@@ -44,10 +47,12 @@ display: none;
 }
 .task .content {
     padding: 10px;
-    width: 200px;
-    height: 300px;
+    min-width: 200px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
+    flex-wrap:wrap;
+    overflow: auto;
     
 }
 
@@ -57,7 +62,7 @@ display: none;
     resize: none;
     border: 1px solid black;
     outline: none;
-    margin: 5px 0px;
+    margin: 5px 5px 5px 5px;
     padding: 5px;
     
 }
@@ -76,9 +81,9 @@ font-size: 1rem;
 padding: 4px;
 display: none;
 
+}
 
+.taskTitle {
 
-
-
-
+    text-align:center;
 }

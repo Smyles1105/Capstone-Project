@@ -35,10 +35,11 @@ function addTask() {
 	const taskTitle = document.createElement("h2");
 	taskTitle.appendChild(document.createTextNode(`Task #${++taskID}`));
 	taskTitle.contentEditable = true;
+	taskTitle.classList.add("taskTitle");
 
 	const content = document.createElement("div");
 	content.classList.add("content");
-	content.appendChild(taskTitle);
+	
 
 	const taskHeader = document.createElement("div");
 	taskHeader.classList.add("taskHeader");
@@ -50,6 +51,7 @@ function addTask() {
 	
 	task.appendChild(taskHeader);
 	task.appendChild(colInputBtn);
+	task.appendChild(taskTitle);
 	task.appendChild(content);
 	
 	
@@ -65,6 +67,7 @@ function addTask() {
 		menubar: 'false',
 		elementpath: 'false',
 		wordcount: 'false',
+		resize: 'both',
 		toolbar: 'text | colour | deleteTask',
 		setup: function (editor) {
 				editor.ui.registry.addButton('taskbackcolour',
@@ -93,13 +96,13 @@ function addTask() {
 			{
 				icon: 'change-case',
 				tooltip: 'Text tools',
-				items: 'bold italic underline strikethrough | superscript subscript | align | text-color highlight-bg-color'
+				items: 'bold italic underline strikethrough | superscript subscript | align'
 			},
 			colour:
 			{
 				icon: 'color-picker',
 				tooltip: 'Background Colours',
-				items: 'backcolor | taskbackcolour'
+				items: 'forecolor | backcolor | taskbackcolour'
 			}
 		}
 	 });
