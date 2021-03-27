@@ -13,12 +13,14 @@ html, body {
 }
 
 h1, #tasks {
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 #tasks {
     display: flex;
     flex-wrap: wrap;
+    margin:auto;
+    
 }
 
 button {
@@ -40,6 +42,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    border:3px solid black;
 
 }
 .colInBtn {
@@ -50,7 +53,7 @@ padding:0;
 margin:0;
 }
 .task .content {
-    padding: 10px;
+    padding: 8px;
     min-width: 200px;
     min-height: 300px;
     display: flex;
@@ -62,7 +65,7 @@ margin:0;
     width: 100%;
     flex: 1;
     resize: none;
-    border: 1px solid black;
+    border: 3x solid black;
     outline: none;
     margin: 5px 5px 5px 5px;
     padding: 5px;
@@ -70,11 +73,21 @@ margin:0;
 }
 
 .task .taskHeader {
+    height: 24px;
+    background-color: black;
+    width: 100%;
+    position: relative;
+    cursor: move;
+    border: 3px solid black;
+}
+
+#calendar .calHeader {
     height: 20px;
     background-color: black;
     width: 100%;
     position: relative;
     cursor: move;
+    
 }
 
 .deleteButton {
@@ -88,4 +101,37 @@ display: none;
 .taskTitle {
 
     text-align:center;
+}
+
+#calendar {
+    user-select: none;
+    resize: both;
+    overflow: visible;
+    display: inline-flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    background-color: #a79b8e;
+    min-height: 415px;
+    min-width: 582px;
+    padding: 0px;
+    margin: 10px;
+    position: absolute;
+    border: 3px solid black;
+    
+}
+
+#cal {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    min-height: 389px;
+    min-width: 576px;
+}
+#calLoc {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height:max-content;
 }

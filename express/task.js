@@ -107,12 +107,7 @@ function addTask() {
 			}
 		}
 	 });
-	 var alltagobjs = document.querySelectorAll(".simple-tags");
-	 var i;
-	 for (i = 0; i < alltagobjs.length; i++)
-	 {
-		 Tags(alltagobjs[i]);
-	 }
+	 
 }
 
 
