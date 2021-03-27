@@ -14,7 +14,7 @@ function deleteTask()
 function taskBackgroundChange(t, c)
 {
 	t.style.backgroundColor = c.value;
-
+	console.log(c.value);
 }
 
 
@@ -29,7 +29,6 @@ function addTask() {
 	colInputBtn.name = "colBtn";
 	colInputBtn.id = "colInputBtn";
 	colInputBtn.classList.add("colInBtn");
-	colInputBtn.defaultValue = "#000000";
 	colInputBtn.addEventListener("input", (ev) => taskBackgroundChange(task, colInputBtn));
 
 	const taskTitle = document.createElement("h2");
@@ -49,11 +48,13 @@ function addTask() {
 	textArea.textContent = ("Click here to type...");
 
 	
+
+	
 	task.appendChild(taskHeader);
 	task.appendChild(colInputBtn);
+	
 	task.appendChild(taskTitle);
 	task.appendChild(content);
-	
 	
 
 	 document.getElementById("tasks").appendChild(task);
@@ -106,6 +107,12 @@ function addTask() {
 			}
 		}
 	 });
+	 var alltagobjs = document.querySelectorAll(".simple-tags");
+	 var i;
+	 for (i = 0; i < alltagobjs.length; i++)
+	 {
+		 Tags(alltagobjs[i]);
+	 }
 }
 
 
