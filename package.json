@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js yarn build:css",
+     "build:css": "postcss tailwind.css -o style.css"
     },
     "dependencies": {
         "dotenv": "^8.2.0",
@@ -11,5 +12,8 @@
         "express-session": "^1.17.1",
         "passport": "^0.4.1",
         "passport-auth0": "^1.4.0"
+    },
+    "devDependencies": {
+        "tailwindcss": "^2.0.4"
     }
 }
