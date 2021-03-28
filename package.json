@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "node server.js yarn build:css",
-     "build:css": "postcss tailwind.css -o style.css"
+        "start": "node server.js && tailwind:css",
+     "tailwind:css": "postcss ./express/style.css -o ./express/tailwind.css"
     },
     "dependencies": {
         "dotenv": "^8.2.0",

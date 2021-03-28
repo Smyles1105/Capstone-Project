@@ -26,5 +26,15 @@ function drag(e) {
 		draggingElement.style.top = newY + "px";
 		draggingElement.style.left = newX + "px";
 		draggingElement.style.position = "absolute";
+		calElem = document.getElementById("calendar");
+		calElemChild = document.getElementById("cal");
+		if (draggingElement == calElem)
+		{
+			tasks = document.getElementById("tasks");
+			tasks.style.top = calElemChild.style.height;
+			console.log(tasks.style.top);
+		}
+		initialized = true;
+		
 	}
 }
