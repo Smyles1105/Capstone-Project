@@ -21,18 +21,23 @@
     </body>
     <body>
 
-        <div id = "calLoc">
+        <div id = "draggableContent" class="flex flex-col w-min">
+
+            <div id = "calLoc" class="flex flex-col w-min absolute">
 
         
-        <div id = "calendar">
-
-            <iframe src="https://calendar.google.com/calendar/embed?height=389&amp;wkst=1&amp;bgcolor=%23A79B8E&amp;ctz=America%2FVancouver&amp;src=ZGYxbHRmbXM4OXQyNXRpMjZzODR0YWpxNTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23EF6C00&amp;color=%2333B679&amp;color=%230B8043&amp;mode=MONTH&amp;showTitle=0&amp;showPrint=1&amp;showDate=1&amp;showTabs=1&amp;showCalendars=1&amp;showTz=0&amp;showNav=1" style="  resize: both; display:flexbox; position: relative;" frameborder="0" scrolling="no" id = "cal"></iframe>   
+                <div id = "calendar" class="w-min z-10 absolute">
         
-        </div>
-        </div>
+                    <iframe src="https://calendar.google.com/calendar/embed?height=389&amp;wkst=1&amp;bgcolor=%23A79B8E&amp;ctz=America%2FVancouver&amp;src=ZGYxbHRmbXM4OXQyNXRpMjZzODR0YWpxNTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23EF6C00&amp;color=%2333B679&amp;color=%230B8043&amp;mode=MONTH&amp;showTitle=0&amp;showPrint=1&amp;showDate=1&amp;showTabs=1&amp;showCalendars=1&amp;showTz=0&amp;showNav=1" style="  resize: both; display:flexbox; position: relative;" frameborder="0" scrolling="no" id = "cal"></iframe>   
+                
+                </div>
+                </div>
+        
+                <div id="tasks" class="flex flex-col z-20"></div>
+        
 
-        <div id="tasks"></div>
-
+        </div>
+        
     </body>
     
     <script src="https://kit.fontawesome.com/4072c68cb0.js" crossorigin="anonymous"></script>

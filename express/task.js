@@ -22,7 +22,8 @@ function addTask() {
 
 	
 	const task = document.createElement("div");
-	task.classList.add("task");
+	task.classList.add("task", "z-10");
+	
 	
 	const colInputBtn = document.createElement("input");
 	colInputBtn.type = "color";
@@ -34,18 +35,19 @@ function addTask() {
 	const taskTitle = document.createElement("h2");
 	taskTitle.appendChild(document.createTextNode(`Task #${++taskID}`));
 	taskTitle.contentEditable = true;
-	taskTitle.classList.add("taskTitle");
+	taskTitle.classList.add("taskTitle", "z-10");
 
 	const content = document.createElement("div");
-	content.classList.add("content");
+	content.classList.add("content", "z-10");
 	
 
 	const taskHeader = document.createElement("div");
-	taskHeader.classList.add("taskHeader");
+	taskHeader.classList.add("taskHeader", "z-10");
 	taskHeader.addEventListener("mousedown", dragStart);
 
 	const textArea = content.appendChild(document.createElement("textarea"));
 	textArea.textContent = ("Click here to type...");
+	textArea.classList.add("z-10");
 
 	
 

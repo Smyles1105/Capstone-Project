@@ -43,6 +43,7 @@ button {
     flex-wrap: wrap;
     flex-direction: column;
     border:3px solid black;
+    z-index: inherit;
 
 }
 .colInBtn {
@@ -58,7 +59,7 @@ margin:0;
     min-height: 300px;
     display: flex;
     flex-direction: column;
-    
+    z-index: inherit;
 }
 
 .task textarea {
@@ -69,6 +70,7 @@ margin:0;
     outline: none;
     margin: 5px 5px 5px 5px;
     padding: 5px;
+    z-index: inherit;
     
 }
 
@@ -79,15 +81,15 @@ margin:0;
     position: relative;
     cursor: move;
     border: 3px solid black;
+    z-index: inherit;
 }
 
 #calendar .calHeader {
     height: 20px;
     background-color: black;
     width: 100%;
-    position: relative;
     cursor: move;
-    
+    z-index: inherit;
 }
 
 .deleteButton {
@@ -115,7 +117,6 @@ display: none;
     min-width: 582px;
     padding: 0px;
     margin: 10px;
-    position: absolute;
     border: 3px solid black;
     
 }
@@ -129,7 +130,6 @@ display: none;
     min-width: 576px;
 }
 #calLoc {
-    position: relative;
     display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
