@@ -28,10 +28,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   
-  position: relative;
-  padding: 0px;
-  width:100%;
-  height:100%;
+  
 }
 
 button {
@@ -110,7 +107,6 @@ display: none;
   text-align:center;
 }
 #calendar {
-  background-color: rgb(200, 200, 200);
   margin: 0px;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -123,10 +119,11 @@ display: none;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  border:3px solid black;
   width:min-content;
   
 }
+
+
 
 #cal {
   padding: 10px;
@@ -136,9 +133,6 @@ display: none;
   min-width: 576px;
   
   height:389px;
-}
-#calLoc {
-  display: block;
 }
 
 .with-border {

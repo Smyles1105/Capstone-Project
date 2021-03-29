@@ -20,8 +20,8 @@ function dragEnd() {
 
 function drag(e) {
 	if (draggingElement !== null) {
-		const newX = e.clientX - grabX,
-			  newY = e.clientY - grabY;
+		const newX = e.clientX - grabX -15,
+			  newY = e.clientY - grabY -200;
 
 		draggingElement.style.top = newY + "px";
 		draggingElement.style.left = newX + "px";

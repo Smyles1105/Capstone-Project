@@ -15,28 +15,42 @@
         <div id = "wrapper" class = "flex flex-wrap flex-row items-baseline">
         <h1 class = "font-bold text-x1 m-4 p-4">Task Management Program</h1>
         <button id="add" class="rounded-xl border-4 border-purple-500 border-opacity-25 ring-4 ring-purple-500 ring-opacity-25 font-medium text-3x1 hover:shadow-sm bg-purple-500 bg-opacity-50 m-4 p-4">Add Task</button>
-        <button id="calVis" class="rounded-xl border-4 border-purple-500 border-opacity-25 ring-4 ring-purple-500 ring-opacity-25 font-medium text-3x1 hover:shadow-sm bg-purple-500 bg-opacity-50 m-4 p-4">Reveal/Hide Calendar</button>
-        </div>
         
         
+    </div>
+    
+        
+            <div id = "calendar" class="min-w-1/2 min-h-400 bg-blue-600 space-y-4 float-right">
+            
+        
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23daeafe&amp;ctz=America%2FVancouver&amp;src=ZGYxbHRmbXM4OXQyNXRpMjZzODR0YWpxNTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23EF6C00&amp;color=%2333B679&amp;color=%230B8043&amp;title=School&amp;showTz=0&amp;showPrint=0&amp;showDate=1" 
+                style="  resize: both; height: 821px; min-width: 800px; min-height: 400px;" frameborder="0" scrolling="no" id = "cal" class="min-w-full min-h-821 bg-gradient-to-b from-blue-100 to-blue-300 relative with-border"></iframe>   
+                
+        
+            </div>
+            <div id="tasks" class="absolute w-1/2"></div>
+                 
+
+        
+        
+
+
+    
     </body>
 
-            <div id = "contentwrapper" class = "flex flex-wrap flex-col">
-                <div id = "calendar" class="min-w-full min-h-821 bg-blue-600">
-        
-                    <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23daeafe&amp;ctz=America%2FVancouver&amp;src=ZGYxbHRmbXM4OXQyNXRpMjZzODR0YWpxNTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23EF6C00&amp;color=%2333B679&amp;color=%230B8043&amp;title=School&amp;showTz=0&amp;showPrint=0&amp;showDate=1" 
-                    style="  resize: both; height: 821px; min-width: 400px; min-height: 400px;" frameborder="0" scrolling="no" id = "cal" class="min-w-full min-h-821 bg-gradient-to-b from-blue-100 to-blue-300 "></iframe>   
-                    
+           
+            
+            <script src ="calendar.js"></script>
+            
+      
 
-                </div>
-                <div id="tasks" class=""></div>
-            </div>
+           
            
     
     <script src="https://kit.fontawesome.com/4072c68cb0.js" crossorigin="anonymous"></script>
     <script src="dragged.js"></script>
     <script src="task.js"></script>
-    <script src ="calendar.js"></script>
+    
     <script src="https://cdn.tiny.cloud/1/mczk2rboulwee27dkzny30c2fhzliifi5ko4dkwu2qlm65da/tinymce/5/tinymce.min.js" referrerpolicy="origin">//TinyMCE
         tinymce.init({
             selector: '.task textarea',
