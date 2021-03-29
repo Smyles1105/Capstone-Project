@@ -92,7 +92,8 @@ function addTask() {
 				}
 			}
 			);
-		},
+			editor.on('init', function() { editor.getContainer().classList.add("with-border");} );
+				},
 		toolbar_groups: 
 		{
 			text: 
